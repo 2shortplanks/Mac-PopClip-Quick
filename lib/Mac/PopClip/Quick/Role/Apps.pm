@@ -16,7 +16,7 @@ Mac::PopClip::Quick::Role::Apps - app list controlling when extension is availab
 
 =head1 DESCRIPTION
 
-Configure which apps the extension will / will not be avaible in.
+Configure which apps the extension will / will not be available in.
 
 =cut
 
@@ -64,3 +64,18 @@ has 'required_apps' => (
 );
 
 1;
+
+__END__
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Mark Fowler.
+
+This is free software; you can redistribute it and/or modify it under the
+same terms as the Perl 5 programming language system itself.
+
+=head1 SEE ALSO
+
+L<Mac::PopClip::Quick> is the main public interface to this module.
+
+This role is consumed by L<Mac::PopClip::Quick::Generator>.

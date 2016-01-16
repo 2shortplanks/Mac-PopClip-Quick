@@ -100,12 +100,12 @@ sub install {
 
 __END__
 
-=head1 BUGS
+=head1 COPYRIGHT AND LICENSE
 
-Several features of PopClip aren't yet supported.
+This software is copyright (c) 2016 by Mark Fowler.
 
-Installing this extension leaves a copy of it (unavoidably, because there's
-no way to tell when PopClip is done with the file) in the temp directory.
+This is free software; you can redistribute it and/or modify it under the
+same terms as the Perl 5 programming language system itself.
 
 =head1 SEE ALSO
 

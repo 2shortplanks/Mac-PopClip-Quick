@@ -78,6 +78,10 @@ sub generator_class { return 'Mac::PopClip::Quick::Generator' }
 sub popclip_text() { return $ENV{POPCLIP_TEXT} }
 push @EXPORT, 'popclip_text';
 
+1;
+
+__END__
+
 =head1 NAME
 
 Mac::PopClip::Quick - quickly write PopClip extensions in Perl
@@ -106,7 +110,7 @@ Then install it as a PopClip Extension
 
 PopClip For Mac is a commercial OS X utility from Pilotmoon Software that
 creates little popup menus when you highlight text.  Please see
-http://pilotmoon.com/popclip/ for more details.
+L<http://pilotmoon.com/popclip/> for more details.
 
 This module make it easier to write PopClip extensions in Perl.  With this
 module you can turn a simple Perl script into an installable extension with a
@@ -151,25 +155,21 @@ script output, for example pasting it:
     );
     print reverse popclip_text();
 
-=back
-
 =head1 Supported Options
 
 =head2 Core Options
 
-=over
-
-=item extension_name
+=head3 extension_name
 
 The name of the extension.  By default this is the name of the script, minus
 any file extension (e.g. if your script if called C<foo.pl> then the extension
 will be called C<foo> by default.)
 
-=item title
+=head3 title
 
 The title.  By default, the same as the C<extension_name>.
 
-=item filename
+=head3 filename
 
 The filename that the tarball will be created with.  Should end with
 C<.popclipextz> (though we don't force you to.)
@@ -178,7 +178,7 @@ By default a temporary filename is used if no value is provided.  If the
 C<CREATE_POPCLIP_EXTENSION> environment variable is set then this will be
 printed out.
 
-=item extension_identifier
+=head3 extension_identifier
 
 A unique identifier for your extension.  This enables PopClip to identify
 if an extension it's installing should install as a new extension or replace
@@ -189,17 +189,13 @@ your Mac and the extension name.  This is B<not> suitable for distribution (if
 you change hardware you won't be able to use it anymore) and you should set a
 value for this attribute before distributing your extension.
 
-=back
-
 =head2 Options Controlling PopClip Behavior
 
-=over
-
-=item required_software_version
+=head3 required_software_version
 
 The required version of PopClip.  By default this is 701.
 
-=item regex
+=head3 regex
 
 A string containing the regex that controls when the extension will be
 triggered.  Note that this is not a Perl regex, but rather a string that PopClip
@@ -207,7 +203,7 @@ can execute as a PCRE.
 
 By default this is undefined, meaning no regex is used.
 
-=item script_interpreter
+=head3 script_interpreter
 
 The program you want to use to execute your Perl script (it can be handy to set
 this if you want to use a perl other than the system perl, e.g. a perl you
@@ -215,21 +211,40 @@ installed with perlbrew)
 
 By default this is C</usr/bin/perl>, the system perl.
 
-=item blocked_apps
+=head3 blocked_apps
 
 Array of bundle identifier strings (e.g. C<com.apple.TextEdit>) of applications
 for which this extension's actions should not appear.
 
-=item required_apps
+=head3 required_apps
 
 Array of bundle identifier strings of applications (e.g. C<com.apple.TextEdit>)
 that this extension's actions will appear in.
 
-=back
+=head1 COPYRIGHT AND LICENSE
 
-=cut
+This software is copyright (c) 2016 by Mark Fowler.
 
-1;
+This is free software; you can redistribute it and/or modify it under the
+same terms as the Perl 5 programming language system itself.
 
-__END__
+=head1 BUGS
+
+Several features of PopClip aren't yet supported.
+
+Installing this extension leaves a copy of it (unavoidably, because there's
+no way to tell when PopClip is done with the file) in the temp directory.
+
+Please report all issues with this code using the GitHub issue tracker at
+L<https://github.com/2shortplanks/Mac-PopClip-Quick/issues>.
+
+Patches welcome, ideally as a GitHub pull request for the GitHub repo at
+L<https://github.com/2shortplanks/Mac-PopClip-Quick>.
+
+=head1 SEE ALSO
+
+You can find more out about PopClip at L<http://pilotmoon.com/popclip>.
+
+L<Mac::PopClip::Quick::Generator> is the workhorse that actually builds the
+PopClip extensions behind the scene.
 
