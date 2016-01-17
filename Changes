@@ -1,6 +1,9 @@
 {{$NEXT}}
 
-- Reorder pod
+- BUGFIX: Fix installation bug (ooops)
+- DOCUMENTATION: Fix example code typo (ooops)
+- DOCUMENTATION: Reorder pod into sane order (ooops)
+- INTERNAL: Switch "after" to "around" in places
 
 1.000000 2016-01-17
 
