@@ -105,5 +105,5 @@ my $g2 = Mac::PopClip::Quick::Generator->new(
 );
 
 like $g2->extension_identifier,
-    qr/\Acom[.]twoshortplanks[.]macpopquickthirdparty[.]hash[a-f0-9]{32}\z/,
+    qr/\Acom[.]macnperl[.]macpopquickthirdparty[.]hash[a-f0-9]{32}\z/,
     'extension_identifier';

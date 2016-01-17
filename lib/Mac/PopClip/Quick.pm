@@ -48,7 +48,7 @@ sub import {
 
     if ($creating) {
         if ( $generator->extension_identifier
-            =~ /\^com[.]twoshortplanks[.]macpopquickthirdparty/ ) {
+            =~ /\^com[.]macnperl[.]macpopquickthirdparty/ ) {
             print STDERR <<'WARNING' or die "Can't print for some reason: $!";
 WARNING: Your extension is using a temporary extension_identifier unsuitable
 for distribution.  It is important that this identifier remain the same for

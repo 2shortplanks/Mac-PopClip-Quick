@@ -129,7 +129,7 @@ sub _build_extension_identifier {
     my $hash = md5_hex( $id . $self->extension_name );
 
     # return in reverse dotted notation
-    return "com.twoshortplanks.macpopquickthirdparty.hash$hash";
+    return "com.macnperl.macpopquickthirdparty.hash$hash";
 }
 
 =head2 required_software_version
