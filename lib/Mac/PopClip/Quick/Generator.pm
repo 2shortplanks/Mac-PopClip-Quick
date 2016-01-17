@@ -49,13 +49,13 @@ Create the file containing the PopClip extension.
 
 =cut
 
-# this method should be extended with "after" by the various roles
+# this method should be extended with "around" by the various roles
 # it's passed the zip file as it's only argument
 sub _add_files_to_zip {
     return;
 }
 
-# this is designed to be called from the 'after' wrappers that
+# this is designed to be called from the 'around' wrappers that
 # the various roles wrap _add_files_to_zip
 ## no critic (Subroutines::ProhibitUnusedPrivateSubroutines)
 sub _add_string_to_zip {
@@ -75,7 +75,7 @@ sub create {
     my $self = shift;
 
     my $zip = Archive::Zip->new;
-    $self->_add_files_to_zip;
+    $self->_add_files_to_zip($zip);
 
     unless ( $zip->writeToFileNamed( $self->filename ) == AZ_OK ) {
         die 'Cannot create zipfile containing extension';
