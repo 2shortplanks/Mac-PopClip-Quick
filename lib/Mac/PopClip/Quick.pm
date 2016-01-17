@@ -129,7 +129,7 @@ In your script you should C<use Mac::PopClip::Quick>.
     #!/usr/bin/perl
 
     use Mac::PopClip::Quick;
-    system('say',"The selected text is '.popclip_text());
+    system('say','The selected text is '.popclip_text());
 
 From the command line you simply need to execute the script with the
 C<INSTALL_POPCLIP_EXTENSION> environment variable set to a true value.
