@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+- DOCUMENTATION: Document before/after actions as options in Mac::PopClip::Quick
+
 1.000001 2016-01-17
 
 - BUGFIX: Fix installation bug (ooops)

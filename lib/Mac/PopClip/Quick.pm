@@ -224,6 +224,21 @@ for which this extension's actions should not appear.
 Array of bundle identifier strings of applications (e.g. C<com.apple.TextEdit>)
 that this extension's actions will appear in.
 
+=head2 after_action
+
+What the extension should do after it's executed.  By default it is a undefined
+value, indicating that it does nothing.  If your script produces output you'll
+probably want to set this to C<paste-result>.  A full range of options that
+PopClip supports can be found at
+L<https://github.com/pilotmoon/PopClip-Extensions#user-content-before-and-after-keys>
+
+=head2 before_action
+
+What the extension should do before it's executed.  By default it is a undefined
+value, indicating that it does nothing. A full range of options that PopClip
+supports can be found at
+L<https://github.com/pilotmoon/PopClip-Extensions#user-content-before-and-after-keys>
+
 =head1 FUNCTIONS
 
 Just the one:
