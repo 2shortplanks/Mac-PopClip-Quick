@@ -224,13 +224,6 @@ for which this extension's actions should not appear.
 Array of bundle identifier strings of applications (e.g. C<com.apple.TextEdit>)
 that this extension's actions will appear in.
 
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2016 by Mark Fowler.
-
-This is free software; you can redistribute it and/or modify it under the
-same terms as the Perl 5 programming language system itself.
-
 =head1 FUNCTIONS
 
 Just the one:
@@ -248,6 +241,13 @@ for this function will be directly inserted into the modified source code.
 
 This function is defined with an empty prototype, meaning you can call it
 without having to use parentheses.
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Mark Fowler.
+
+This is free software; you can redistribute it and/or modify it under the
+same terms as the Perl 5 programming language system itself.
 
 =head1 BUGS
 
