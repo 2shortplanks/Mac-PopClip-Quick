@@ -3,6 +3,8 @@ use Moo::Role;
 
 requires '_plist_action_key_values';
 
+our $VERSION = '1.000000';
+
 =head1 NAME
 
 Mac::PopClip::Quick::Role::BeforeAfter - add before and after actions
@@ -37,7 +39,7 @@ probably want to set this to C<paste-result>.  A full range of options that
 PopClip supports can be found at
 L<https://github.com/pilotmoon/PopClip-Extensions#user-content-before-and-after-keys>
 
-=cut 
+=cut
 
 has 'after_action' => (
     is      => 'ro',

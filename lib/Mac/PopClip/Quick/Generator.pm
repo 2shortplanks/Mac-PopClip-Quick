@@ -18,6 +18,8 @@ with
 
 Mac::PopClip::Quick::Generator - quickly generate PopClip extensions in Perl
 
+=for test_synopsis my $script_src = 'dummy';
+
 =head1 SYNOPSIS
 
    use Mac::PopClip::Quick::Generator;
@@ -92,7 +94,8 @@ WARNING: This leaves the temp file that this creates in the temp directory.
 
 sub install {
     my $self = shift;
-    system( 'open', $self->filename );
+    system( 'open', $self->filename ) == 0
+        or die "Can't execute 'open' in order to install extension: $!";
     return;
 }
 

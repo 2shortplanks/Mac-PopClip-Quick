@@ -3,6 +3,8 @@ use Moo::Role;
 
 requires '_plist_action_key_values';
 
+our $VERSION = '1.000000';
+
 =head1 NAME
 
 Mac::PopClip::Quick::Role::Regex - regex controlling when extension is available
@@ -28,7 +30,7 @@ around '_plist_action_key_values' => sub {
     return @ret;
 };
 
-=head1 ATTRBITUTES
+=head1 ATTRIBUTES
 
 =head2 regex
 

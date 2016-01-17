@@ -1,11 +1,13 @@
 package Mac::PopClip::Quick::Role::Apps;
 use Moo::Role;
 
+our $VERSION = '1.000000';
+
 requires '_plist_action_key_values';
 
 =head1 NAME
 
-Mac::PopClip::Quick::Role::Apps - app list controlling when extension is available
+Mac::PopClip::Quick::Role::Apps - App list controlling when extension is available
 
 =head1 SYNOPSIS
 
@@ -16,7 +18,7 @@ Mac::PopClip::Quick::Role::Apps - app list controlling when extension is availab
 
 =head1 DESCRIPTION
 
-Configure which apps the extension will / will not be available in.
+Configure which Apps the extension will / will not be available in.
 
 =cut
 

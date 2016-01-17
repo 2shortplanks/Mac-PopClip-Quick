@@ -1,10 +1,13 @@
 package Mac::PopClip::Quick::Role::CoreAttributes;
 use Moo::Role;
+use autodie;
 
 use File::Temp qw(tempfile);
 use File::Spec::Functions qw(tmpdir);
 use File::Basename qw(fileparse);
 use Digest::MD5 qw(md5_hex);
+
+our $VERSION = '1.000000';
 
 requires '_plist_action_key_values', '_plist_main_key_values';
 
@@ -37,7 +40,7 @@ Mac::PopClip::Quick::Role::CoreAttributes - core attributes for generation
 
 =head1 DESCRIPTION
 
-Core attributes for popclip generation
+Core attributes for PopClip generation
 
 =head1 ATTRIBUTES
 
@@ -129,7 +132,7 @@ sub _build_extension_identifier {
     return "com.twoshortplanks.macpopquickthirdparty.hash$hash";
 }
 
-=item required_software_version
+=head2 required_software_version
 
 The required version of PopClip.  By default this is 701.
 

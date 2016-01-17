@@ -1,5 +1,8 @@
 package Mac::PopClip::Quick::Role::PerlScript;
 use Moo::Role;
+use autodie;
+
+our $VERSION = '1.000000';
 
 requires '_add_files_to_zip', '_plist_action_key_values';
 

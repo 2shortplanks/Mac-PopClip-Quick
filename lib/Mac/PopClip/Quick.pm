@@ -36,7 +36,7 @@ sub import {
     # note: $src_filename can still be overriden
     # by whatever is passed in
     my $generator_class
-        = delete $args{generator_class} || $self->generator_class;
+        = delete $args{generator_class} || $class->_generator_class;
     my $generator = $generator_class->new(
         src_filename   => $src_filename,
         extension_name => $name,
@@ -49,7 +49,7 @@ sub import {
     if ($creating) {
         if ( $generator->extension_identifier
             =~ /\^com[.]twoshortplanks[.]macpopquickthirdparty/ ) {
-            print STDERR <<'WARNING';
+            print STDERR <<'WARNING' or die "Can't print for some reason: $!";
 WARNING: Your extension is using a temporary extension_identifier unsuitable
 for distribution.  It is important that this identifier remain the same for
 every version of your extension so installing later version of the extension
@@ -67,13 +67,14 @@ on different hardware:
 
 WARNING
         }
-        print 'Created extension at ', $generator->filename, "\n";
+        print "Created extension at @{[ $generator->filename ]}\n"
+            or die "Can't print for some reason: $!";
     }
 
     exit;
 }
 
-sub generator_class { return 'Mac::PopClip::Quick::Generator' }
+sub _generator_class { return 'Mac::PopClip::Quick::Generator' }
 
 sub popclip_text() { return $ENV{POPCLIP_TEXT} }
 push @EXPORT, 'popclip_text';
@@ -85,6 +86,8 @@ __END__
 =head1 NAME
 
 Mac::PopClip::Quick - quickly write PopClip extensions in Perl
+
+=for test_synopsis BEGIN { die "SKIP: not testable\n"; }
 
 =head1 SYNOPSIS
 
@@ -228,12 +231,35 @@ This software is copyright (c) 2016 by Mark Fowler.
 This is free software; you can redistribute it and/or modify it under the
 same terms as the Perl 5 programming language system itself.
 
+=head1 FUNCTIONS
+
+Just the one:
+
+=head2 popclip_text
+
+Exported by default, this function simply returns the value of
+C<%ENV{POPCLIP_TEXT}> (but gives better error messages if you mistype it and
+have use strict turned on.)
+
+Since the Perl source code that is bundled in the generated extension is
+modified so it no longer loads this module (so that if you distribute your
+extension then your end users do not have to install this module) the code
+for this function will be directly inserted into the modified source code.
+
+This function is defined with an empty prototype, meaning you can call it
+without having to use parentheses.
+
 =head1 BUGS
 
 Several features of PopClip aren't yet supported.
 
 Installing this extension leaves a copy of it (unavoidably, because there's
 no way to tell when PopClip is done with the file) in the temp directory.
+
+If your code has Perl's subroutine signatures feature enabled at the time you
+import this module then the modified code will not properly define the prototype
+for the C<popclip_text> function meaning you will be unable to call it without
+parentheses.
 
 Please report all issues with this code using the GitHub issue tracker at
 L<https://github.com/2shortplanks/Mac-PopClip-Quick/issues>.
