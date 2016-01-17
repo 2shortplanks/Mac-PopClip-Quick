@@ -4,7 +4,8 @@ use autodie;
 
 our $VERSION = '1.000001';
 
-requires '_add_files_to_zip', '_plist_action_key_values';
+requires '_add_files_to_zip', '_add_string_to_zip',
+    '_plist_action_key_values';
 
 =head1 NAME
 
@@ -41,7 +42,7 @@ around '_add_files_to_zip' => sub {
     my $self = shift;
     my $zip  = shift;
 
-    $self->add_string_to_zip(
+    $self->_add_string_to_zip(
         $zip, $self->filtered_src,
         'extension.popclipext/script.pl'
     );

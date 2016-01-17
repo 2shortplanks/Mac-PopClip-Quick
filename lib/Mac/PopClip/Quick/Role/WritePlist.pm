@@ -10,7 +10,7 @@ around '_add_files_to_zip' => sub {
     my $self = shift;
     my $zip  = shift;
 
-    $self->add_string_to_zip(
+    $self->_add_string_to_zip(
         $zip, $self->plist_xml,
         'extension.popclipext/Config.plist'
     );
