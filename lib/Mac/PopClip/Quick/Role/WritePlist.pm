@@ -3,7 +3,7 @@ use Moo::Role;
 
 requires '_add_files_to_zip', '_add_string_to_zip';
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 after '_add_files_to_zip' => sub {
     my $self = shift;

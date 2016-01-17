@@ -4,7 +4,7 @@ use base qw(Exporter);
 use strict;
 use warnings;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 use File::Spec::Functions qw(tmpdir);
 use File::Basename qw(fileparse);

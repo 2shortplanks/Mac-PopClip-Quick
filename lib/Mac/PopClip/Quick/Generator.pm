@@ -2,7 +2,7 @@ package Mac::PopClip::Quick::Generator;
 
 use Moo;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 use Archive::Zip qw( :ERROR_CODES :CONSTANTS );
 
