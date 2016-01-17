@@ -36,7 +36,8 @@ sub BUILD {
     return;
 }
 
-after '_add_files_to_zip' => sub {
+around '_add_files_to_zip' => sub {
+    my $orig = shift;
     my $self = shift;
     my $zip  = shift;
 
@@ -45,7 +46,7 @@ after '_add_files_to_zip' => sub {
         'extension.popclipext/script.pl'
     );
 
-    return;
+    return $orig->( $self, $zip );
 };
 
 around '_plist_action_key_values' => sub {

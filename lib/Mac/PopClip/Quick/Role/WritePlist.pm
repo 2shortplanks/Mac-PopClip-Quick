@@ -5,7 +5,8 @@ requires '_add_files_to_zip', '_add_string_to_zip';
 
 our $VERSION = '1.000001';
 
-after '_add_files_to_zip' => sub {
+around '_add_files_to_zip' => sub {
+    my $orig = shift;
     my $self = shift;
     my $zip  = shift;
 
@@ -14,7 +15,7 @@ after '_add_files_to_zip' => sub {
         'extension.popclipext/Config.plist'
     );
 
-    return;
+    return $orig->( $self, $zip );
 };
 
 # other roles will wrap these two methods with "around" to
