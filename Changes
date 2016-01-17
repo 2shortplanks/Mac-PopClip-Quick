@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.000001 2016-01-17
+
 - BUGFIX: Fix installation bug (ooops)
 - DOCUMENTATION: Fix example code typo (ooops)
 - DOCUMENTATION: Reorder pod into sane order (ooops)
