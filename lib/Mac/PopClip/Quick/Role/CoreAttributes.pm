@@ -7,7 +7,7 @@ use File::Spec::Functions qw(tmpdir);
 use File::Basename qw(fileparse);
 use Digest::MD5 qw(md5_hex);
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 requires '_plist_action_key_values', '_plist_main_key_values';
 
