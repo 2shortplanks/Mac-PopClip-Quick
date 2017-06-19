@@ -27,6 +27,15 @@ around '_plist_main_key_values' => sub {
         'Required Software Version', $self->required_software_version;
 };
 
+has _popclipext_name => (
+    is => 'lazy',
+);
+
+sub _build__popclipext_name {
+    my $self = shift;
+    return md5_hex( $self->extension_identifier ) . '.popclipext';
+}
+
 =head1 NAME
 
 Mac::PopClip::Quick::Role::CoreAttributes - core attributes for generation

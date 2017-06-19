@@ -64,6 +64,8 @@ sub _add_string_to_zip {
     my $string   = shift;
     my $filename = shift;
 
+    $filename = $self->_popclipext_name . "/$filename";
+
     my $new_file = $zip->addString( $string, $filename );
     $new_file->desiredCompressionMethod(COMPRESSION_DEFLATED);
 

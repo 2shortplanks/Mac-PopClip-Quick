@@ -12,7 +12,7 @@ around '_add_files_to_zip' => sub {
 
     $self->_add_string_to_zip(
         $zip, $self->plist_xml,
-        'extension.popclipext/Config.plist'
+        'Config.plist'
     );
 
     return $orig->( $self, $zip );

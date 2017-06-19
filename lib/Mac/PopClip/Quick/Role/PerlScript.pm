@@ -44,7 +44,7 @@ around '_add_files_to_zip' => sub {
 
     $self->_add_string_to_zip(
         $zip, $self->filtered_src,
-        'extension.popclipext/script.pl'
+        'script.pl'
     );
 
     return $orig->( $self, $zip );
