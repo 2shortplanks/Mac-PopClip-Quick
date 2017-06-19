@@ -1,7 +1,7 @@
 package Mac::PopClip::Quick::Role::Apps;
 use Moo::Role;
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 requires '_plist_action_key_values';
 
