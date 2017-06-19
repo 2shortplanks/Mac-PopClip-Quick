@@ -46,7 +46,7 @@ plist.
 =cut
 
 has 'blocked_apps' => (
-    is => 'ro',
+    is      => 'ro',
     default => sub { [] },
 );
 
@@ -61,7 +61,7 @@ plist.
 =cut
 
 has 'required_apps' => (
-    is => 'ro',
+    is      => 'ro',
     default => sub { [] },
 );
 
