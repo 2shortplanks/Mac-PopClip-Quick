@@ -1,6 +1,8 @@
 {{$NEXT}}
 
 - DOCUMENTATION: Document before/after actions as options in Mac::PopClip::Quick
+- BUGFIX: Fix when installing two extensions, the second one conflicting with
+          the first
 
 1.000001 2016-01-17
 
